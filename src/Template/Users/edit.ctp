@@ -26,6 +26,21 @@
                     'required' => true
                 ]) ?>
             </div>
+            <div class="form-group">
+                <?= $this->Form->radio('group_account', [
+                    [
+                        'value' => 0,
+                        'text' => 'Customer',
+                        'label' => [
+                            'class' => 'mr-2'
+                        ]
+                    ],
+                    [
+                        'value' => 1,
+                        'text' => 'User admin'
+                    ]
+                ]) ?>
+            </div>
         </fieldset>
         <?= $this->Form->button(__('Submit'), [
             'class' => 'btn btn-success'

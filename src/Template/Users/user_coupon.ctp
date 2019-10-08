@@ -18,7 +18,6 @@
                 <th scope="col"><?= __('Coupon') ?></th>
                 <th scope="col"><?= __('Status') ?></th>
                 <!--<th scope="col"><?/*= __('Status') */?></th>-->
-                <th scope="col" class="text-center"><?= __('Actions') ?></th>
             </tr>
             </thead>
             <tbody>
@@ -29,15 +28,6 @@
                     <td><?= h($userCoupon->coupon) ?></td>
                     <td><?= $usedCoupon[$userCoupon->id_coupon] ? 'Used' : 'New' ?></td>
                     <!--<td><?/*= $userCoupon->status ? __('Used') : __('New') */?></td>-->
-                    <td class="text-center">
-                        <?= $this->Form->postLink(__('Delete'), [
-                            'action' => 'delete',
-                            $userCoupon->id
-                        ], [
-                            'confirm' => __('Are you sure you want to delete # {0}?', $userCoupon->id),
-                            'class' => 'btn btn-sm btn-danger'
-                        ]) ?>
-                    </td>
                 </tr>
             <?php endforeach;?>
             </tbody>
