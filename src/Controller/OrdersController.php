@@ -186,13 +186,13 @@ class OrdersController extends AppController
                         ]);
                         $used_coupon = $product_coupon['used'];
                         if ($used_coupon) {
-                            $res['error'] = 'The coupon is incorrect or has been used';
+                            $res['error'] = 'The coupon has been used';
                         } else {
                             $res['error'] = '';
                             $listProducts[$key] = $listProducts[$key] - ($listProducts[$key] * 10) / 100;
                         }
                     } else {
-                        $res['error'] = 'The coupon is incorrect or has been used';
+                        $res['error'] = 'The coupon is incorrect.';
                     }
                 }
             }
