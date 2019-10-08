@@ -188,6 +188,7 @@ class OrdersController extends AppController
                         if ($used_coupon) {
                             $res['error'] = 'The coupon is incorrect or has been used';
                         } else {
+                            $res['error'] = '';
                             $listProducts[$key] = $listProducts[$key] - ($listProducts[$key] * 10) / 100;
                         }
                     } else {
