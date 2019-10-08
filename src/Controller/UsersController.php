@@ -169,10 +169,15 @@ class UsersController extends AppController
         $user_Coupons = $this->UserCoupon->find('all')
             ->order(['id' => 'desc'])
             ->where(['id_user' => $id_user]);
-
+        foreach ($user_Coupons as $userCoupon) {
+            $product_coupon = $this->ProductCoupon->get($userCoupon->id_coupon);
+            $usedCoupon[$userCoupon->id_coupon] = $product_coupon['used'];
+        }
+//        $product_coupon = $this->ProductCoupon->get();
+//        $user_Coupons['used'] = $product_coupon['used'];
         $userCoupons = $this->paginate($user_Coupons);
 
-        $this->set(compact('userCoupons'));
+        $this->set(compact('userCoupons', 'usedCoupon'));
     }
 
     public function getCoupon()

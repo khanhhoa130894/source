@@ -74,4 +74,13 @@ class ProductCouponTable extends Table
             ->where(['id' => $id])
             ->execute();
     }
+
+    public function updateUsedCoupon($coupon = null)
+    {
+        $this->query()
+            ->update()
+            ->set(['used' => 1])
+            ->where(['coupon' => $coupon])
+            ->execute();
+    }
 }

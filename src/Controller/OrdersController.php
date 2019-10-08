@@ -122,6 +122,8 @@ class OrdersController extends AppController
                     $order_detail = $this->OrderDetail->patchEntity($order_detail, $data_order_detail);
                     if ($order_detail->coupon == null) {
                         $order_detail->coupon = '';
+                    } else {
+                        $this->ProductCoupon->updateUsedCoupon($data_order_detail['coupon']);
                     }
                     $this->OrderDetail->save($order_detail);
                 }

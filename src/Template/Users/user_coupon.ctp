@@ -27,7 +27,7 @@
                     <th scope="row" class="text-center"><?= $this->Number->format($userCoupon->id) ?></th>
                     <td><?= h($userCoupon->id_product) ?></td>
                     <td><?= h($userCoupon->coupon) ?></td>
-                    <td><?= $userCoupon->status ? 'Used' : 'New' ?></td>
+                    <td><?= $usedCoupon[$userCoupon->id_coupon] ? 'Used' : 'New' ?></td>
                     <!--<td><?/*= $userCoupon->status ? __('Used') : __('New') */?></td>-->
                     <td class="text-center">
                         <?= $this->Form->postLink(__('Delete'), [
